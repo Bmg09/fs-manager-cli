@@ -4,6 +4,7 @@ const { program } = require('commander');
 const axios = require('axios');
 const { fetchJoke } = require('../src/joke');
 const { printDirectoryTree } = require('../src/tree');
+const { createDirectoryTreeJSON } = require('../src/backup');
 
 program
   .version('1.0.0')
@@ -21,6 +22,18 @@ program
     }
     printDirectoryTree(cmd.path, '', cmd.excludeFolder);
 });
+
+program
+  .command('backup')
+  .description('Creates a JSON backup of the [current|path] directory')
+  .option('-p, --path <path>', 'Add a path')
+  .option('-e, --excludeFolder <excludeFolder>', 'Add a folder name which you don\'t want to add in the backup')
+  .action((cmd) => {
+    if(cmd.path === undefined || cmd.path === null || cmd.path === '') {
+        cmd.path = process.cwd()
+    }
+    createDirectoryTreeJSON(cmd.path, cmd.excludeFolder);
+  });
 
 program
   .command('joke')
