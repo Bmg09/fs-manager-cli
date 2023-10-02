@@ -13,20 +13,18 @@
 
 To install `fs-manager-cli`, run:
 
-\`\`\`bash
+```bash
 npm install -g fs-manager-cli
-\`\`\`
-
+```
 ## Usage
 
 ### View Directory Tree
 
 To print a tree of the current directory:
 
-\`\`\`bash
+```bash
 fs-manager-cli view-tree
-\`\`\`
-
+```
 #### Options
 
 - `-p, --path <path>`: Specify a path to view its directory tree.
@@ -36,9 +34,9 @@ fs-manager-cli view-tree
 
 To fetch a random joke:
 
-\`\`\`bash
+```bash
 fs-manager-cli joke
-\`\`\`
+```
 
 #### Options
 
@@ -49,27 +47,26 @@ fs-manager-cli joke
 
 ### View Tree of Current Directory
 
-\`\`\`bash
+```bash
 fs-manager-cli view-tree
-\`\`\`
+```
 
 ### View Tree of Specified Path
 
-\`\`\`bash
+```bash
 fs-manager-cli view-tree -p /usr/local
-\`\`\`
-
+```
 ### Fetch a Joke for John
 
-\`\`\`bash
+```bash
 fs-manager-cli joke -n John
-\`\`\`
+```
 
 ### Fetch a Joke About Cats
 
-\`\`\`bash
+```bash
 fs-manager-cli joke -s cats
-\`\`\`
+```
 
 ## License
 
