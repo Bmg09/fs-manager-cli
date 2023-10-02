@@ -4,7 +4,8 @@
   "description": "A file manager",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "author": "bikramghosh9595@gmail.com",
   "license": "ISC",
@@ -14,5 +15,8 @@
   "dependencies": {
     "axios": "^1.5.1",
     "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "release-it": "^16.2.1"
   }
 }
