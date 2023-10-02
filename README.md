@@ -74,4 +74,4 @@ MIT
 
 ---
 
-Feel free to contribute and raise issues. Enjoy using `fs-manager-cli`!
+Feel free to contribute and raise issues. Enjoy using `fs-manager-cli`! 
