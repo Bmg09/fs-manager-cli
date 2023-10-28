@@ -22,29 +22,20 @@ function getAllFilesInDirectory(dirPath, excludeFolderName = '') {
     }
 
     collectFilesInDirectory(dirPath);
-    console.log(files);
     return files;
 }
 
-
 function categorizeAndMoveFiles(dirPath, excludeFolderName = '', extension = []) {
     const filesArray = getAllFilesInDirectory(dirPath, excludeFolderName);
-    
+
     for (const filePath of filesArray) {
-        const mimeType = mime.lookup(filePath);
+        const fileExtension = path.extname(filePath).toLowerCase();
 
-        let destinationFolder;
+        let destinationFolder = path.join(dirPath, 'Other'); // Default to 'Other' folder
 
-        switch (mimeType) {
-            case 'image/jpeg':
-                destinationFolder = path.join(dirPath, 'JPG');
-                break;
-            case 'application/pdf':
-                destinationFolder = path.join(dirPath, 'PDF');
-                break;
-            // Add more cases for other MIME types as needed
-            default:
-                destinationFolder = path.join(dirPath, 'Other');
+        // Check if the file extension is in the extension array
+        if (extension.includes(fileExtension)) {
+            destinationFolder = path.join(dirPath, fileExtension.slice(1).toUpperCase());
         }
 
         // Create the destination folder if it doesn't exist
@@ -60,4 +51,3 @@ function categorizeAndMoveFiles(dirPath, excludeFolderName = '', extension = [])
 module.exports = {
     categorizeAndMoveFiles
 };
-
