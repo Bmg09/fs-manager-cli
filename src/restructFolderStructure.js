@@ -39,7 +39,6 @@ function categorizeAndMoveFiles(dirPath, excludeFolderName = '', extension = [])
         const mimeType = mime.getType(filePath)
         const extensionFromMime = mime.getExtension(mimeType)
         let destinationFolder = path.join(dirPath, 'Other')
-    
         if (extension.includes(extensionFromMime)) {
             destinationFolder = path.join(dirPath, extensionFromMime.toUpperCase()) 
         }
