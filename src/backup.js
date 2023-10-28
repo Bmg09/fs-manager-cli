@@ -24,7 +24,6 @@ function createDirectoryTreeJSON(dirPath, excludeFolderName = '') {
     }
 
     traverseDirectory(dirPath, directoryTree);
-    console.log(path.sep)
     fs.writeFileSync(`${dirPath}${path.sep}directory_backup.json`, JSON.stringify(directoryTree, null, 2));
 }
 
