@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 
 const { program } = require('commander');
-const axios = require('axios');
 const { fetchJoke } = require('../src/joke');
 const { printDirectoryTree } = require('../src/tree');
 const { createDirectoryTreeJSON } = require('../src/backup');
+const { categorizeAndMoveFiles } = require('../src/restructFolderStructure');
+const chalk = require('chalk')
 
 program
   .version('1.0.0')
-  .description('A command-line tool for fetching jokes and printing directory trees');
+  .description('A command-line tool for printing directory trees, creating JSON directory backups');
 
 
 program
@@ -33,6 +34,22 @@ program
         cmd.path = process.cwd()
     }
     createDirectoryTreeJSON(cmd.path, cmd.excludeFolder);
+  });
+
+program
+  .command('restructure')
+  .description(`${chalk.yellow('Warning: Use with caution can alter system files.')} \nRestructure the [current|path] directory`)
+  .option('-p, --path <path>', 'Add a path')
+  .option('-e, --excludeFolder <excludeFolder>', 'Add a folder name which you don\'t want to restructure')
+  .option('-ext, --extension <extension>', 'Add a extensions which you want to restructure sample input: -ext jpg,png,pdf')
+  .action((cmd) => {
+    
+    if(cmd.path === undefined || cmd.path === null || cmd.path === '') {
+        console.log(chalk.red('No argument passed.'));
+        return;
+    }
+    categorizeAndMoveFiles(cmd.path, cmd.excludeFolder, cmd.extension.split(','));
+    
   });
 
 program

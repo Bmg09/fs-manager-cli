@@ -2,12 +2,14 @@
 
 ## Description
 
-`fs-manager-cli` is a command-line tool built to make your life easier by fetching jokes and printing directory trees directly from your terminal.
+`fs-manager-cli` is a command-line tool built to printing directory trees directly from your terminal, take a JSON dump of Directory tree, Re-arrange files using MIME-TYPE of given type through terminal and Fetch random Jokes.
 
 ## Features
 
-- Fetch a random joke or based on a search term
+- JSON dump of Directory tree
 - View the directory tree of any given path
+- Re-arrange files using MIME-TYPE
+- Fetch random Jokes
 
 ## Installation
 
@@ -30,6 +32,31 @@ fs-manager-cli view-tree
 - `-p, --path <path>`: Specify a path to view its directory tree.
 - `-e, --excludeFolder <excludeFolder>`: Exclude a specific folder from the tree.
 
+### Create a JSON dump of directory tree
+
+Creates a JSON backup of the [current|path] directory:
+
+```bash
+fs-manager-cli backup
+```
+#### Options
+
+- `-p, --path <path>`: Specify a path to view its directory tree.
+- `-e, --excludeFolder <excludeFolder>`: Exclude a specific folder from the tree.
+
+### Restructure files using MIME-TYPE
+
+Restructures files using MIME-TYPE of given type:
+
+```bash
+fs-manager-cli restructure
+```
+#### Options
+
+- `-p, --path <path>`: Add a path
+- `-e, --excludeFolder <excludeFolder>`:Add a folder name which you don't want to restructure
+- `-ext, --extension <extension>`:  Add a extensions which you want to restructure
+
 ### Fetch a Joke
 
 To fetch a random joke:
@@ -50,11 +77,27 @@ fs-manager-cli joke
 ```bash
 fs-manager-cli view-tree
 ```
-
 ### View Tree of Specified Path
 
 ```bash
 fs-manager-cli view-tree -p /usr/local
+```
+
+### Create a Backup
+
+```bash
+fs-manager-cli backup
+```
+
+### Create a Backup of Specified Path
+
+```bash
+fs-manager-cli backup -p /usr/local
+```
+
+### Restructure Files
+```bash
+fs-manager-cli restructure -p /usr/local -ext jpg,png -e node_modules 
 ```
 ### Fetch a Joke for John
 
