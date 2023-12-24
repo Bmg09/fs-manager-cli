@@ -2,17 +2,17 @@
   "name": "fs-manager-cli",
   "version": "3.0.0",
   "description": "A file manager",
-  "main": "bin/index.js",
+  "main": "dist/bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "release-it",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/bin/index.js"
   },
   "author": "bikramghosh9595@gmail.com",
   "license": "ISC",
   "bin": {
-    "fs-manager-cli": "./bin/index.js"
+    "fs-manager-cli": "./dist/bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
-    "@types/node": "^20.10.5",
     "release-it": "^16.2.1",
     "typescript": "^5.3.3"
   }
