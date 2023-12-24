@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "release-it",
     "build": "tsc",
-    "start": "node dist/bin/index.js",
-    "postinstall": "tsc"
+    "start": "node dist/bin/index.js"
   },
   "author": "bikramghosh9595@gmail.com",
   "license": "ISC",
