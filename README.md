@@ -16,7 +16,6 @@ To install `fs-manager-cli`, run:
 ```bash
 npm install -g fs-manager-cli
 ```
-
 ## Usage
 
 ### View Directory Tree
@@ -26,7 +25,6 @@ To print a tree of the current directory:
 ```bash
 fs-manager-cli view-tree
 ```
-
 #### Options
 
 - `-p, --path <path>`: Specify a path to view its directory tree.
@@ -39,7 +37,6 @@ Creates a JSON backup of the [current|path] directory:
 ```bash
 fs-manager-cli backup
 ```
-
 #### Options
 
 - `-p, --path <path>`: Specify a path to view its directory tree.
@@ -52,7 +49,6 @@ Restructures files using MIME-TYPE of given type:
 ```bash
 fs-manager-cli restructure
 ```
-
 #### Options
 
 - `-p, --path <path>`: Add a path
@@ -100,11 +96,9 @@ fs-manager-cli backup -p /usr/local
 ```
 
 ### Restructure Files
-
 ```bash
 fs-manager-cli restructure -p /usr/local -ext jpg,png -e node_modules 
 ```
-
 ### Fetch a Joke for John
 
 ```bash

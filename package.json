@@ -5,11 +5,7 @@
   "main": "dist/bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it",
-    "build": "tsc",
-    "start": "node dist/bin/index.js",
-    "preinstall": "npm i -g typescript",
-    "postinstall": "npm run build"
+    "release": "release-it"
   },
   "author": "bikramghosh9595@gmail.com",
   "license": "ISC",
@@ -27,9 +23,6 @@
     "mime": "^3.0.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/node": "^20.10.5",
-    "release-it": "^16.2.1",
-    "typescript": "^5.3.3"
+    "release-it": "^16.2.1"
   }
 }
