@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "release-it",
     "build": "tsc",
-    "start": "node dist/bin/index.js"
+    "start": "node dist/bin/index.js",
+    "preinstall": "npm i -g typescript",
+    "postinstall": "npm run build"
   },
   "author": "bikramghosh9595@gmail.com",
   "license": "ISC",
