@@ -2,7 +2,7 @@
   "name": "fs-manager-cli",
   "version": "4.0.26",
   "description": "A file manager",
-  "main": "dist/bin/index.js",
+  "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "release-it"
@@ -10,7 +10,7 @@
   "author": "bikramghosh9595@gmail.com",
   "license": "ISC",
   "bin": {
-    "fs-manager-cli": "./dist/bin/index.js"
+    "fs-manager-cli": "./bin/index.js"
   },
   "repository": {
     "type": "git",
