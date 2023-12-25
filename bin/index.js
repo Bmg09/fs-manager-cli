@@ -6,6 +6,7 @@ const { printDirectoryTree } = require('../src/tree');
 const { createDirectoryTreeJSON } = require('../src/backup');
 const { categorizeAndMoveFiles } = require('../src/restructFolderStructure');
 const chalk = require('chalk')
+const inquirer = require('inquirer');
 
 program
   .version('1.0.0')
@@ -65,5 +66,51 @@ program
   });
 
 
+program
+  .command('execute')
+  .description('Execute a code snippet in a selected language')
+  .action(async () => {
+    const language = await promptForLanguage(); 
+    const code = await promptForCode(); 
+    const result = await CodeExecutionService.executeCode(language, code);
+    console.log('Execution Result:', result);
+  });
+
 
 program.parse(process.argv);
+
+
+
+async function promptForLanguage() {
+    const languages = ['JavaScript', 'Python', 'Java', 'C++', 'Ruby'];
+    const questions = [
+        {
+            type: 'list',
+            name: 'language',
+            message: 'Select a programming language:',
+            choices: languages
+        }
+    ];
+
+    const answers = await inquirer.prompt(questions);
+    return answers.language;
+}
+
+async function promptForCode() {
+  const questions = [
+      {
+          type: 'editor',
+          name: 'code',
+          message: 'Enter your code snippet:',
+          validate: function (text) {
+              if (text.trim().length === 0) {
+                  return 'Code cannot be empty!';
+              }
+              return true;
+          }
+      }
+  ];
+
+  const answers = await inquirer.prompt(questions);
+  return answers.code;
+}
