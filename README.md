@@ -2,14 +2,12 @@
 
 ## Description
 
-`fs-manager-cli` is a command-line tool built to printing directory trees directly from your terminal, take a JSON dump of Directory tree, Re-arrange files using MIME-TYPE of given type through terminal and Fetch random Jokes.
+`fs-manager-cli` is a command-line tool built to make your life easier by fetching jokes and printing directory trees directly from your terminal.
 
 ## Features
 
-- JSON dump of Directory tree
+- Fetch a random joke or based on a search term
 - View the directory tree of any given path
-- Re-arrange files using MIME-TYPE
-- Fetch random Jokes
 
 ## Installation
 
@@ -77,6 +75,8 @@ fs-manager-cli joke
 ```bash
 fs-manager-cli view-tree
 ```
+
+
 ### View Tree of Specified Path
 
 ```bash
@@ -116,5 +116,4 @@ fs-manager-cli joke -s cats
 MIT
 
 ---
-
-Feel free to contribute and raise issues. Enjoy using `fs-manager-cli`! 
+Feel free to contribute and raise issues. Enjoy using `fs-manager-cli`!
